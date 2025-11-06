@@ -46,7 +46,7 @@ const books = [
 ];
 
 
-
+// S N A C K    1
 // Crea un array (longBooks) con i libri che hanno più di 300 pagine;
 
 const longBooks = books.filter((l) => l.pages > 300)
@@ -55,3 +55,15 @@ console.log(longBooks)
 //Creare un array(longBooksTitles) che contiene solo i titoli dei libri contenuti in longBooks.
 const longBooksTitles = longBooks.map(l => l.title)
 console.log(longBooksTitles)
+
+//Stampa in console ogni titolo nella console.
+
+books.forEach(l => {
+  console.log(l.title)
+});
+
+
+// S N A C K    2
+//Creare un array (availableBooks) che contiene tutti i libri disponibili.
+const availableBooks = books.filter(l => l.available === true);
+console.log(availableBooks)
