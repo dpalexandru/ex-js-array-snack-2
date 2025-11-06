@@ -115,3 +115,23 @@ if (areAuthorsAdults === true) {
 }
 
 console.log(authors);
+
+
+// S N A C K    4
+//Creare un array (ages) che contiene le età degli autori dei libri.
+
+const ages = authors.map(l => l.age)
+console.log("età autori: ");
+console.log(ages);
+
+//Calcola la somma delle età (agesSum) usando reduce.
+const agesSum = ages.reduce((acc, a) => acc + a, 0)
+console.log("somma età")
+console.log(agesSum)
+
+//Stampa in console l’età media degli autori dei libri.
+
+const media = agesSum / ages.length
+console.log("media età")
+console.log(media)
+
