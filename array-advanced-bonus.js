@@ -91,3 +91,36 @@ const tagCounts = books.reduce((acc, b) => {
 }, {});
 
 console.log(tagCounts)
+
+
+//Snack 6 (Bonus) - Ordina i libri
+//Crea una variabile booleana (areThereAvailableBooks) 
+// per verificare se c’è almeno un libro disponibile.
+
+const areThereAvailableBooks = books.some(l => l.available === true)
+console.log("libri avviabili:" + areThereAvailableBooks)
+
+//Crea un array (booksByPrice) con gli elementi di books
+//  ordinati in base al prezzo (crescente).
+
+const booksSortedByPrice = books.sort((a, b) => {
+  const prezzoA = parseFloat(a.price);
+  const prezzoB = parseFloat(b.price);
+  return prezzoA - prezzoB;
+});
+
+console.log(booksSortedByPrice);
+
+
+//Ordina l’array booksByPricein base alla disponibilità 
+// (prima quelli disponibili), senza creare un nuovo array.
+
+books.sort((a, b) => {
+  // true viene trattato come 1, false come 0
+  // quindi invertiamo il segno per mettere prima i true
+  return (b.available === true) - (a.available === true);
+});
+
+console.log(books);
+
+
