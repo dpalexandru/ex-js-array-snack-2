@@ -117,7 +117,7 @@ if (areAuthorsAdults === true) {
 console.log(authors);
 
 
-// S N A C K    4
+// S N A C K    5
 //Creare un array (ages) che contiene le età degli autori dei libri.
 
 const ages = authors.map(l => l.age)
@@ -134,4 +134,5 @@ console.log(agesSum)
 const media = agesSum / ages.length
 console.log("media età")
 console.log(media)
+
 
