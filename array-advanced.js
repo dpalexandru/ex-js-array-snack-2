@@ -67,3 +67,28 @@ books.forEach(l => {
 //Creare un array (availableBooks) che contiene tutti i libri disponibili.
 const availableBooks = books.filter(l => l.available === true);
 console.log(availableBooks)
+
+// Crea un array (discountedBooks) con gli availableBooks, 
+// ciascuno con il prezzo scontato del 20% 
+// (mantieni lo stesso formato e arrotonda al centesimo)
+
+const discountedBooks = availableBooks.map((l) => {
+  const prezzo = parseFloat(l.price);
+  const scontato = (prezzo * 0.8);
+  const formattato = `${scontato}€`;
+  return {
+    ...l,
+    price: formattato
+  }
+})
+console.log(discountedBooks)
+
+// Salva in una variabile (fullPricedBook) il primo elemento di 
+// discountedBooks che ha un prezzo intero (senza centesimi).
+
+const fullPricedBook = discountedBooks.find((l) => {
+  const prezzo = parseFloat(l.price);
+  return prezzo % 1 === 0;
+});
+console.log(" Primo senza decimali in discountedBooks");
+console.log(fullPricedBook);
