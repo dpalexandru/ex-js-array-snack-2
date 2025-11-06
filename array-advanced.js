@@ -92,3 +92,26 @@ const fullPricedBook = discountedBooks.find((l) => {
 });
 console.log(" Primo senza decimali in discountedBooks");
 console.log(fullPricedBook);
+
+// S N A C K    3
+// Creare un array (authors) che contiene gli autori dei libri.
+
+const authors = books.map(l => l.author)
+console.log(authors)
+
+//Crea una variabile booleana (areAuthorsAdults) per verificare se gli autori sono tutti maggiorenni.
+
+const areAuthorsAdults = authors.every(l => l.age > 18)
+console.log(`Gli autori sono tutti maggiorenni: ${areAuthorsAdults}`)
+
+//Ordina l’array authors in base all’età, senza creare un nuovo array.
+//(se areAuthorsAdult è true, ordina in ordine crescente, 
+// altrimenti in ordine decrescente)
+
+if (areAuthorsAdults === true) {
+  authors.sort((a, b) => b.age - a.age)
+} else {
+  authors.sort((a, b) => a.age - b.age)
+}
+
+console.log(authors);
